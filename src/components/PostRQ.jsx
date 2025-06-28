@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import React from 'react'
+import { Link } from 'react-router';
 
 //latest method to fetching data rather from that traditional way,,,, 
 const PostRQ = () => {
@@ -51,10 +52,13 @@ queryFn:() => {
     <div className='container'>
       <button onClick={refetch} className='btn btn-primary'>Fetch Posts</button>
       {data && data.data.map(post => (
+        <Link to={`/rq-posts/${post.id}`}>
+
             <div className='post-item' key={post.id}>
             <h2 className='post-title'>{post.title}</h2>
             <p className='post-body'>{post.body}</p>
             </div>
+        </Link>
         ))}
     </div>
   )
