@@ -1,6 +1,5 @@
 import { useInfiniteQuery } from '@tanstack/react-query'
 import axios from 'axios'
-import React, { useEffect } from 'react'
 // import { useInView } from "react-intersection-observer";
 
 const fetchFruits = ({ pageParam }) => {
